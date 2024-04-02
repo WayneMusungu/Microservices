@@ -7,7 +7,6 @@ import (
 	"github.com/WayneMusungu/Microservices.git/data"
 )
 
-
 // Products is a http.Handler
 type Products struct {
 	l *log.Logger
