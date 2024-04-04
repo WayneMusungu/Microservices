@@ -55,4 +55,9 @@ func (p Products) addProduct(rw http.ResponseWriter, r *http.Request) {
 
 	prod := &data.Product{}
 	err := prod.FromJSON(r.Body)
+	if err != nil {
+		http.Error(rw, "Unable to unmarshal json", http.StatusBadRequest)
+	}
+
+	data.AddProduct(prod)
 }
